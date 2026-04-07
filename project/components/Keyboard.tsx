@@ -6,7 +6,7 @@ const KEYBOARD = [
 
 export const Keyboard = ({onKey}: {onKey: (key: string) => void}) => {
     return (
-        <div className = "flex flex-col items-center gap-2 w-full">
+        <div className = "flex flex-col items-center gap-2 w-full text-white">
             {KEYBOARD.map((row, i) => (
                 <div key = {i} className = "flex gap-2">
                     {row.map ((key) => (

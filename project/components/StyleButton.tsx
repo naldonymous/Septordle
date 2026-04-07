@@ -14,14 +14,22 @@ export default function StyleButton() {
     }, [isDark]);
 
     return (
-        <div>
-            <button onClick = {() => setIsDark(!isDark)}
+        <div className="gap-20 flex">
+            <button onClick = {() => setIsDark(true)}
                 className="
                     bg-white-200
-                    dark: bg-zinc-800
-                    cursor-pointer active: 50
+                    dark:black
+                    cursor-pointer active:50
                 ">
-                {isDark ? "darkMode" : "lightMode"}
+                {"🌙"}
+            </button>
+            <button onClick = {() => setIsDark(false)}
+                className="
+                    bg-white-200
+                    dark:black
+                    cursor-pointer active:50
+                ">
+                {"☀️"}
             </button>
         </div>
     )
