@@ -30,3 +30,7 @@ html.dark {
     --background: black;
     --foreground: white;
 }
+
+button {
+    cursor: pointer;
+}

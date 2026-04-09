@@ -2,10 +2,10 @@
 import { useGameLogic } from "../hooks/useGameLogic";
 import { GameBoard } from "@/components/GameBoard";
 import { Footer, Keyboard, Navbar } from "@/components";
-import { handleKeyPress } from "../utils/gameLogic";
+import { getSolution, handleKeyPress } from "../utils/gameLogic";
 
 export default function Game() {
-  const solution = "APPLE"; // TODO: Replace with dynamic solution
+  const solution = getSolution(); // TODO: Replace with dynamic solution
   const { guesses, currGuess, setCurrGuess, gameOver } = useGameLogic(solution);
   
   const setGuesses = () => {};
