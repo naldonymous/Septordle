@@ -3,16 +3,14 @@ import StyleButton from "./StyleButton";
 
 export default function Navbar() {
     return (
-        <div>
-            <h1 className = "text-4xl pt-15 text-center">SEPTORDLE</h1>
-            <nav className="text-[color:var(--foreground)]">
-                <div className="max-w-2xl mx-auto h-20 gap-20 border-2 flex items-center justify-center text-2xl font-bold px-12 mt-5 mb-5">
-                    <Link href="/">Home</Link>
-                    <Link href="/game">Play</Link>
-                    <Link href="/stats">Stats</Link>
-                    <StyleButton/>
-                </div>
-            </nav>
-        </div>
+        <nav className="bg-gray-400 border-b py-4 text-[color:var(--foreground)] flex items-center justify-between w-full px-8">
+            <h1 className = "text-2xl">SEPTORDLE</h1>
+            <div className="flex gap-8">
+                <Link href="/" className="hover:text-red-200 hover:text-xl transition-all duration-200">Home</Link>
+                <Link href="/game" className="hover:text-red-200 hover:text-xl transition-all duration-200">Play</Link>
+                <Link href="/stats" className="hover:text-red-200 hover:text-xl transition-all duration-200">Stats</Link>
+                <StyleButton/>
+            </div>
+        </nav>
     )
 }

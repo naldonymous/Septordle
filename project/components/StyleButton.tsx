@@ -14,12 +14,13 @@ export default function StyleButton() {
     }, [isDark]);
 
     return (
-        <div className="gap-20 flex">
+        <div className="gap-10 flex">
             <button onClick = {() => setIsDark(true)}
                 className="
                     bg-white-200
                     dark:black
                     cursor-pointer active:50
+                    hover:text-xl transition-all duration-200
                 ">
                 {"🌙"}
             </button>
@@ -28,6 +29,7 @@ export default function StyleButton() {
                     bg-white-200
                     dark:black
                     cursor-pointer active:50
+                    hover:text-xl transition-all duration-200
                 ">
                 {"☀️"}
             </button>

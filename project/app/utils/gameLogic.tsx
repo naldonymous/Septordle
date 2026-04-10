@@ -60,7 +60,7 @@ export const getLetterColor = (letter: string, index: number, solution: string) 
         alert("Congratulations! You guessed the word!");
       } else if (guesses.length + 1 === 6) {
         setGameOver(true);
-        updateStats(true, 6);
+        updateStats(false, 6);
         alert(`Game Over! The word was ${solution}`);
       }
       return;
