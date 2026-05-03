@@ -16,7 +16,7 @@ export const GameBoard = ({ guesses, currGuess, solution }: GameBoardProps) => {
 
         return (
           <div key={rowIndex} className="flex gap-2">
-            {[...Array(5)].map((_, letterIndex) => {
+            {[...Array(7)].map((_, letterIndex) => {
               const letter = rowWord[letterIndex];
               const pickColor = pastGuess ? getLetterColor(letter, letterIndex, solution) : "border-zinc-700";
 

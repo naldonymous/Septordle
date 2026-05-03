@@ -32,6 +32,7 @@ export const getLetterColor = (letter: string, index: number, solution: string) 
     setCurrGuess: (guess: string) => void,
     setGuesses: (guesses: string[]) => void,
     setGameOver: (status: boolean) => void,
+    setMessage: (msg: string | null) => void,
     solution: string,
     guesses: string[]
   ) => {
@@ -41,13 +42,13 @@ export const getLetterColor = (letter: string, index: number, solution: string) 
     }
   
     if (e.key === "Enter") {
-      if (currGuess.length !== 5) {
-        alert("Too short");
+      if (currGuess.length !== 7) {
+        setMessage("Too short");
         return;
       }
   
       if (!VALID_GUESSES.includes(currGuess)) {
-        alert("Not a valid word!");
+        setMessage("Not a valid word!");
         return;
       }
   
@@ -57,16 +58,16 @@ export const getLetterColor = (letter: string, index: number, solution: string) 
       if (currGuess === solution) {
         setGameOver(true);
         updateStats(true, guesses.length + 1);
-        alert("Congratulations! You guessed the word!");
+        setMessage("Congratulations! You guessed the word!");
       } else if (guesses.length + 1 === 6) {
         setGameOver(true);
         updateStats(false, 6);
-        alert(`Game Over! The word was ${solution}`);
+        setMessage(`Game Over! The word was ${solution}`);
       }
       return;
     }
   
-    if (currGuess.length < 5 && /^[a-z]$/i.test(e.key)) {
+    if (currGuess.length < 7 && /^[a-z]$/i.test(e.key)) {
       setCurrGuess(currGuess + e.key.toUpperCase());
     }
   };

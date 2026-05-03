@@ -6,13 +6,14 @@ export const useGameLogic = (solution: string) => {
   const [currGuess, setCurrGuess] = useState("");
   const [gameOver, setGameOver] = useState(false);
   const date = new Date().toISOString().split("T")[0];
+  const [message, setMessage] = useState<string | null>(null);
 
   useEffect(() => {
     const keyListener = (e: KeyboardEvent) => {
       if (gameOver) {
         return;
       }
-      handleKeyPress(e, currGuess, setCurrGuess, setGuesses, setGameOver, solution, guesses);
+      handleKeyPress(e, currGuess, setCurrGuess, setGuesses, setGameOver, setMessage, solution, guesses);
     };
 
     window.addEventListener("keydown", keyListener);
@@ -47,5 +48,14 @@ export const useGameLogic = (solution: string) => {
     }
   }, [guesses, gameOver]);
 
-  return { guesses, currGuess, gameOver, setCurrGuess };
+  useEffect(() => {
+    if (message) {
+        const time = setTimeout(() => {
+            setMessage(null);
+        }, 1500);
+        return () => clearTimeout(time);
+        }
+    }, [message]);
+
+  return { guesses, currGuess, gameOver, setCurrGuess, message};
 };
