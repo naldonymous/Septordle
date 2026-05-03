@@ -23,7 +23,8 @@ export const GameBoard = ({ guesses, currGuess, solution }: GameBoardProps) => {
               return (
                 <div
                   key={letterIndex}
-                  className={`w-14 h-14 border-2 flex items-center justify-center ${pickColor}`}
+                  className={`w-14 h-14 border-2 flex items-center justify-center ${pickColor} ${pastGuess ? "tile-flip" : ""}`}
+                  style = {{ animationDelay: `${letterIndex * 0.3}s` }}
                 >
                   {letter}
                 </div>

@@ -12,7 +12,22 @@ export default function Home() {
             <p className="text-2xl">Hello! Welcome to</p>
             <p className="text-6xl font-bold">Septordle</p>
         </div>
-        <Link href="/game" className="text-3xl mt-4 px-8 py-8 bg-blue-500 text-white rounded hover:opacity-70
+
+        <br></br>
+        <p className="text-3xl">HOW TO PLAY:</p>
+        <div className="flex gap-2 items-center justify-center">
+            <div className="w-12 h-12 flex items-center justify-center text-white font-bold text-xl bg-green-600">S</div>
+            <div className="w-12 h-12 flex items-center justify-center text-white font-bold text-xl bg-zinc-400">E</div>
+            <div className="w-12 h-12 flex items-center justify-center text-white font-bold text-xl bg-yellow-600">P</div>
+            <div className="w-12 h-12 flex items-center justify-center text-white font-bold text-xl bg-green-600">T</div>
+            <div className="w-12 h-12 flex items-center justify-center text-white font-bold text-xl bg-zinc-400">O</div>
+            <div className="w-12 h-12 flex items-center justify-center text-white font-bold text-xl bg-zinc-400">R</div>
+            <div className="w-12 h-12 flex items-center justify-center text-white font-bold text-xl bg-yellow-600">D</div>
+        </div>
+
+        <p>Green: <br></br> Yellow: <br></br> Grey:</p>
+
+        <Link href="/game" className="text-xl mt-4 px-8 py-3 bg-blue-500 text-white rounded hover:opacity-70
         transition-all duration-200">Enter Game</Link>
     </main>
   );
