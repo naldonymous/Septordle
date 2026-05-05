@@ -25,7 +25,13 @@ export default function Home() {
             <div className="w-12 h-12 flex items-center justify-center text-white font-bold text-xl bg-yellow-600">D</div>
         </div>
 
-        <p>Green: <br></br> Yellow: <br></br> Grey:</p>
+        <p className="font-bold text-xl">
+            Green: Letter is in the word and in the correct position.
+            <br></br>
+            Yellow: Letter is in the word and not in the correct position.
+            <br></br> 
+            Grey: Letter is not in the word.
+        </p>
 
         <Link href="/game" className="text-xl mt-4 px-8 py-3 bg-blue-500 text-white rounded hover:opacity-70
         transition-all duration-200">Enter Game</Link>
