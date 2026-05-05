@@ -33,6 +33,7 @@ export const getLetterColor = (letter: string, index: number, solution: string) 
     setGuesses: (guesses: string[]) => void,
     setGameOver: (status: boolean) => void,
     setMessage: (msg: string | null) => void,
+    setShake: (status: boolean) => void,
     solution: string,
     guesses: string[]
   ) => {
@@ -44,11 +45,13 @@ export const getLetterColor = (letter: string, index: number, solution: string) 
     if (e.key === "Enter") {
       if (currGuess.length !== 7) {
         setMessage("Too short");
+        setShake(true);
         return;
       }
   
       if (!VALID_GUESSES.includes(currGuess)) {
         setMessage("Not a valid word!");
+        setShake(true);
         return;
       }
   
