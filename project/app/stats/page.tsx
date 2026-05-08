@@ -22,7 +22,7 @@ export default function Stats() {
         <div className = "flex flex-col items-center">
             <title>Septordle - Stats</title>
             {stats ? (
-                <div className="grid grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 px-4">
                     <div className="hover:opacity-70 border rounded-lg p-6 bg-gray-50 dark:bg-blue-500 flex-1 flex-col items-center">
                         <p className="text-sm text-white">Total Games Played:</p>
                         <p className="text-lg text-white font-bold">{stats.totalGames}</p>

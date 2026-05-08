@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { handleKeyPress } from "../utils/gameLogic";
+import { getKeyColors } from "../utils/gameLogic";
 
 export const useGameLogic = (solution: string) => {
   const [guesses, setGuesses] = useState<string[]>([]);
@@ -8,6 +9,7 @@ export const useGameLogic = (solution: string) => {
   const date = new Date().toISOString().split("T")[0];
   const [message, setMessage] = useState<string | null>(null);
   const [shake, setShake] = useState(false);
+  const keyColors = getKeyColors(guesses, solution);
 
   useEffect(() => {
     const keyListener = (e: KeyboardEvent) => {
@@ -67,5 +69,9 @@ export const useGameLogic = (solution: string) => {
     }
   }, [shake]);
 
-  return { guesses, currGuess, gameOver, setCurrGuess, message, shake};
+  const handleOnScreenKey = (key: string) => {
+    handleKeyPress({ key } as unknown as KeyboardEvent, currGuess, setCurrGuess, setGuesses, setGameOver, setMessage, setShake, solution, guesses);
+  };
+
+  return { guesses, currGuess, gameOver, setCurrGuess, message, shake, keyColors, handleOnScreenKey};
 };

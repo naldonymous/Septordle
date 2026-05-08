@@ -23,12 +23,15 @@ export const GameBoard = ({ guesses, currGuess, solution, shake }: GameBoardProp
 
               return (
                 <div
-                  key={letterIndex}
-                  className={`w-14 h-14 border-2 flex items-center justify-center ${pickColor} ${pastGuess ? "tile-flip" : ""}`}
-                  style = {{ animationDelay: `${letterIndex * 0.2}s` }}
-                >
-                  {letter}
-                </div>
+                      key={`${rowIndex}-${letterIndex}-${pastGuess}`}
+                      className={`w-10 h-10 sm:w-14 sm:h-14 border-2 flex items-center justify-center 
+                        ${pastGuess ? "tile-flip tile-flip-out" : "border-zinc-700"}`}
+                        style={{'--delay': `${letterIndex * 0.3}s`} as React.CSSProperties}>
+                        <div className={`w-full h-full flex items-center justify-center
+                            ${pastGuess ? pickColor + " tile-color" : ""}`}>
+                            {letter}
+                        </div>
+                    </div>
               );
             })}
           </div>

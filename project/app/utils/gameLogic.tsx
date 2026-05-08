@@ -9,6 +9,29 @@ export const getSolution = () => {
     return ANSWERS[randomIndex];
 }
 
+export const getKeyColors = (guesses: string[], solution: string) => {
+    const colors: Record<string, string> = {};
+  
+    guesses.forEach((guess) => {
+      guess.split("").forEach((letter, index) => {
+        const upperLetter = letter.toUpperCase();
+        if (upperLetter === solution[index]) {
+          colors[upperLetter] = "bg-green-600";
+        } else if (solution.includes(upperLetter)) {
+          if (colors[upperLetter] !== "bg-green-600") {
+            colors[upperLetter] = "bg-yellow-600";
+          }
+        } else {
+          if (!colors[upperLetter]) {
+            colors[upperLetter] = "bg-zinc-400";
+          }
+        }
+      });
+    });
+  
+    return colors;
+  }
+
 export const getLetterColor = (letter: string, index: number, solution: string) => {
     if (!letter) return;
   
@@ -37,12 +60,12 @@ export const getLetterColor = (letter: string, index: number, solution: string) 
     solution: string,
     guesses: string[]
   ) => {
-    if (e.key === "Backspace") {
+    if (e.key === "BACKSPACE" || e.key === "Backspace") {
       setCurrGuess(currGuess.slice(0, -1));
       return;
     }
   
-    if (e.key === "Enter") {
+    if (e.key === "ENTER" || e.key === "Enter") {
       if (currGuess.length !== 7) {
         setMessage("Too short");
         setShake(true);

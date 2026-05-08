@@ -6,7 +6,7 @@ import {Footer, Keyboard, Navbar, StyleButton} from "@/components";
 
 export default function Home() {
   return (
-    <main className = "flex flex-col items-center gap-8">
+    <main className="flex flex-col items-center gap-8 px-4">
         <title>Septordle - Home</title>
         <div id = "description" className = "text-center">
             <p className="text-2xl">Hello! Welcome to</p>
@@ -16,13 +16,13 @@ export default function Home() {
         <br></br>
         <p className="text-3xl">HOW TO PLAY:</p>
         <div className="flex gap-2 items-center justify-center">
-            <div className="w-12 h-12 flex items-center justify-center text-white font-bold text-xl bg-green-600">S</div>
-            <div className="w-12 h-12 flex items-center justify-center text-white font-bold text-xl bg-zinc-400">E</div>
-            <div className="w-12 h-12 flex items-center justify-center text-white font-bold text-xl bg-yellow-600">P</div>
-            <div className="w-12 h-12 flex items-center justify-center text-white font-bold text-xl bg-green-600">T</div>
-            <div className="w-12 h-12 flex items-center justify-center text-white font-bold text-xl bg-zinc-400">O</div>
-            <div className="w-12 h-12 flex items-center justify-center text-white font-bold text-xl bg-zinc-400">R</div>
-            <div className="w-12 h-12 flex items-center justify-center text-white font-bold text-xl bg-yellow-600">D</div>
+        <div className="w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center text-white font-bold sm:text-xl bg-green-600">S</div>
+            <div className="w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center text-white font-bold sm:text-xl bg-zinc-400">E</div>
+            <div className="w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center text-white font-bold sm:text-xl bg-yellow-600">P</div>
+            <div className="w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center text-white font-bold sm:text-xl bg-green-600">T</div>
+            <div className="w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center text-white font-bold sm:text-xl bg-zinc-400">O</div>
+            <div className="w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center text-white font-bold sm:text-xl bg-zinc-400">R</div>
+            <div className="w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center text-white font-bold sm:text-xl bg-yellow-600">D</div>
         </div>
 
         <p className="font-bold text-xl">

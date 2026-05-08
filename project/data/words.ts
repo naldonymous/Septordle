@@ -1,5 +1,5 @@
-import { WORDLE_ANSWERS } from "./word-data";
+import commonWords from "@/data/commonWordsLen7.json";
+import uncommonWords from "@/data/commonWordsLen7.json";
 
-export const ANSWERS = WORDLE_ANSWERS.split('\n').map(w => w.toUpperCase().trim());
-
+export const ANSWERS = [...commonWords, ...uncommonWords].map(w => w.toUpperCase().trim());
 export const VALID_GUESSES = [...ANSWERS];
