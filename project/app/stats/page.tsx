@@ -41,7 +41,7 @@ export default function Stats() {
                     </div>
                     <div className="hover:opacity-70 border rounded-lg p-6 bg-gray-50 dark:bg-blue-500 flex-1 flex-col items-center">
                         <p className="text-sm text-white">Average Attempts to Win</p>
-                        <p className="text-lg text-white font-bold">{stats.totalWins > 0 ? (stats.bestAttempt / stats.totalWins).toFixed(2) : 'N/A'}</p>
+                        <p className="text-lg text-white font-bold">{stats.totalWins > 0 && stats.bestAttempt ? (stats.bestAttempt / stats.totalWins).toFixed(2) : 'N/A'}</p>
                     </div>
                     <div className="hover:opacity-70 border rounded-lg p-6 bg-gray-50 dark:bg-blue-500 flex-1 flex-col items-center">
                         <p className="text-sm text-white">Loss Percentage</p>
