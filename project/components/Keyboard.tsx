@@ -8,9 +8,9 @@ export const Keyboard = ({onKey, keyColors}: {
     onKey: (key: string) => void,
     keyColors: Record<string, string>}) => {
     return (
-        <div className = "flex flex-col items-center gap-2 w-full text-white">
+        <div className = "flex flex-col items-center gap-2 w-full max-w-lg text-white">
             {KEYBOARD.map((row, i) => (
-                <div key={i} className="flex gap-1 w-screen px-2">
+                <div key={i} className="flex gap-1 w-full max-w-lg px-2">
                     {row.map ((key) => (
                         <button 
                         key={key}
